@@ -1,0 +1,83 @@
+[
+  {
+    "name": "The Butterfly Effect",
+    "date": "22/04/2024 - 22/04/2025",
+    "time": "10:00 AM - 5:00 PM",
+    "description": "A temporary art installation co-curated with young people, exploring extinction, climate change, and hope for the future.",
+    "location": "Sedgwick Museum of Earth Sciences, Downing Street, Cambridge, CB2 3EQ",
+    "booking_details": "Free. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "Breaking New Ground: Celebrating Past, Present and Future Women Earth Scientists at the University of Cambridge",
+    "date": "24/08/2024 - 05/09/2025",
+    "time": "10:00 AM - 5:00 PM",
+    "description": "A display celebrating women Earth scientists, co-curated by Earth Sciences students.",
+    "location": "Sedgwick Museum of Earth Sciences, Downing Street, Cambridge, CB2 3EQ",
+    "booking_details": "Free. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "Glenn Ligon: All Over The Place",
+    "date": "20/09/2024 - 02/03/2025",
+    "time": "10:00 AM - 5:00 PM",
+    "description": "An exhibition showcasing the work of American contemporary artist Glenn Ligon.",
+    "location": "The Fitzwilliam Museum, Trumpington Street, Cambridge, CB2 1RB",
+    "booking_details": "Free. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "New Display ‘+FRANKLIN: Rosalind Franklin and DNA’",
+    "date": "21/09/2024 - 18/09/2025",
+    "time": "10:00 AM - 5:00 PM",
+    "description": "Discover the blue plaque repeatedly graffitied to acknowledge Rosalind Franklin’s contribution to the history of DNA.",
+    "location": "Whipple Museum of the History of Science, Free School Lane, Cambridge, CB2 3RH",
+    "booking_details": "Free. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "Chamber Music Concerts - Subscription Ticket",
+    "date": "10/10/2024 - 22/05/2025",
+    "time": "8:00 PM - 10:00 PM",
+    "description": "A series of fifteen Chamber Music concerts over the year.",
+    "location": "Kettle's Yard, Castle Street, Cambridge, CB3 0AQ",
+    "booking_details": "£240 (£75 students). Subscription tickets available for collection at the first concert attended.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "The Cavendish Laboratory and the Birth of the Atomic Age",
+    "date": "27/11/2024 - 31/05/2025",
+    "time": "10:00 AM - 5:00 PM",
+    "description": "A new exhibition exploring the history of the Cavendish Laboratory and its role in the birth of the atomic age.",
+    "location": "Whipple Museum of the History of Science, Free School Lane, Cambridge, CB2 3RH",
+    "booking_details": "Free. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "Picturing Excess: Jan Davidsz de Heem",
+    "date": "03/12/2024 - 13/04/2025",
+    "time": "10:00 AM - 5:00 PM",
+    "description": "Experience monumental still-life paintings by Dutch artist Jan Davidsz de Heem, displayed together for the first time.",
+    "location": "The Fitzwilliam Museum, Trumpington Street, Cambridge, CB2 1RB",
+    "booking_details": "Free. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "Fault Lines: Imagining Indigenous futures for colonial collections",
+    "date": "06/12/2024 - 21/12/2025",
+    "time": "10:00 AM - 5:00 PM",
+    "description": "An exhibition exploring interactions between Indigenous communities of the volcanic Pacific region and colonial institutions.",
+    "location": "Museum of Archaeology and Anthropology, Downing Street, Cambridge, CB2 3DZ",
+    "booking_details": "Free. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  },
+  {
+    "name": "Snowdrop Trail 2025",
+    "date": "02/01/2025 - 01/03/2025",
+    "time": "10:00 AM - 4:00 PM",
+    "description": "Explore the beauty of snowdrops across the Garden with our self-guided trail.",
+    "location": "Cambridge University Botanic Garden, 1 Brookside, Cambridge, CB2 1JE",
+    "booking_details": "Free with normal Garden admission. Drop-in, no booking required.",
+    "event_page": "https://www.museums.cam.ac.uk/whats-on"
+  }
+]

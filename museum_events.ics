@@ -1,0 +1,76 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+DESCRIPTION:Discover the blue plaque repeatedly graffitied to acknowledge Rosalind Franklin’s contribution to the history of DNA.\nFree. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20240921T170000Z
+LOCATION:Whipple Museum of the History of Science\, Free School Lane\, Cambridge\, CB2 3RH
+DTSTART:20240921T100000Z
+SUMMARY:New Display ‘+FRANKLIN: Rosalind Franklin and DNA’
+UID:d0e39312-3db1-47b4-8daa-fd4a16437387@d0e3.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:An exhibition exploring interactions between Indigenous communities of the volcanic Pacific region and colonial institutions.\nFree. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20241206T170000Z
+LOCATION:Museum of Archaeology and Anthropology\, Downing Street\, Cambridge\, CB2 3DZ
+DTSTART:20241206T100000Z
+SUMMARY:Fault Lines: Imagining Indigenous futures for colonial collections
+UID:d8e0918e-e313-4944-8618-ef07efee4df3@d8e0.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:A new exhibition exploring the history of the Cavendish Laboratory and its role in the birth of the atomic age.\nFree. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20241127T170000Z
+LOCATION:Whipple Museum of the History of Science\, Free School Lane\, Cambridge\, CB2 3RH
+DTSTART:20241127T100000Z
+SUMMARY:The Cavendish Laboratory and the Birth of the Atomic Age
+UID:8bdcd802-c89c-418d-9dbc-c4f03a8104b5@8bdc.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Explore the beauty of snowdrops across the Garden with our self-guided trail.\nFree with normal Garden admission. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20250102T160000Z
+LOCATION:Cambridge University Botanic Garden\, 1 Brookside\, Cambridge\, CB2 1JE
+DTSTART:20250102T100000Z
+SUMMARY:Snowdrop Trail 2025
+UID:22ef5568-b0dc-4562-8dc0-d7c1c6fdeb7b@22ef.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Experience monumental still-life paintings by Dutch artist Jan Davidsz de Heem\, displayed together for the first time.\nFree. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20241203T170000Z
+LOCATION:The Fitzwilliam Museum\, Trumpington Street\, Cambridge\, CB2 1RB
+DTSTART:20241203T100000Z
+SUMMARY:Picturing Excess: Jan Davidsz de Heem
+UID:bec2c647-aaff-4e21-b67c-c9951c81e686@bec2.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:An exhibition showcasing the work of American contemporary artist Glenn Ligon.\nFree. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20240920T170000Z
+LOCATION:The Fitzwilliam Museum\, Trumpington Street\, Cambridge\, CB2 1RB
+DTSTART:20240920T100000Z
+SUMMARY:Glenn Ligon: All Over The Place
+UID:4e246301-f6c9-4d10-afad-09b9c2e724fb@4e24.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:A display celebrating women Earth scientists\, co-curated by Earth Sciences students.\nFree. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20240824T170000Z
+LOCATION:Sedgwick Museum of Earth Sciences\, Downing Street\, Cambridge\, CB2 3EQ
+DTSTART:20240824T100000Z
+SUMMARY:Breaking New Ground: Celebrating Past\, Present and Future Women Earth Scientists at the University of Cambridge
+UID:f0f5f4bd-0ff7-4432-ad4a-1edd1be4c692@f0f5.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:A temporary art installation co-curated with young people\, exploring extinction\, climate change\, and hope for the future.\nFree. Drop-in\, no booking required.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20240422T170000Z
+LOCATION:Sedgwick Museum of Earth Sciences\, Downing Street\, Cambridge\, CB2 3EQ
+DTSTART:20240422T100000Z
+SUMMARY:The Butterfly Effect
+UID:586c262d-fd08-4240-9951-56bd3286617b@586c.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:A series of fifteen Chamber Music concerts over the year.\n£240 (£75 students). Subscription tickets available for collection at the first concert attended.\nhttps://www.museums.cam.ac.uk/whats-on\n
+DTEND:20241010T220000Z
+LOCATION:Kettle's Yard\, Castle Street\, Cambridge\, CB3 0AQ
+DTSTART:20241010T200000Z
+SUMMARY:Chamber Music Concerts - Subscription Ticket
+UID:cf85eef0-e5ed-4eb9-afbf-11927ec17906@cf85.org
+END:VEVENT
+END:VCALENDAR
