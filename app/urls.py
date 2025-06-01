@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path('events/', views.GoogleCalendarEntryList.as_view(), name='google-calendar-events'),
 ]

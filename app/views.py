@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import generics
+from .models import GoogleCalendarEntry
+from .serializer import GoogleCalendarEntrySerializer
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+class GoogleCalendarEntryList(generics.ListAPIView):
+    queryset = GoogleCalendarEntry.objects.all()
+    serializer_class = GoogleCalendarEntrySerializer
