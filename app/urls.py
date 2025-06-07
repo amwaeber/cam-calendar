@@ -1,7 +1,13 @@
 from django.urls import path
 
-from . import views
+from rest_framework.routers import DefaultRouter
+from .views import EventViewSet
 
-urlpatterns = [
-    path('events/', views.GoogleCalendarEntryList.as_view(), name='google-calendar-events'),
-]
+
+router = DefaultRouter()
+router.register(r'events', EventViewSet, basename='event')
+
+urlpatterns = router.urls
+# urlpatterns = [
+#     path('events/', views.GoogleCalendarEntryList.as_view(), name='google-calendar-events'),
+# ]

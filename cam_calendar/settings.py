@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j26a&-ez@t9tnj==rtdrjb469nyh)-54%8qrs2cv-9$6t7w0%f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.81']
 
 
 # Application definition
@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -50,6 +52,22 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if os.getenv("DJANGO_ENV") == "development":
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:8081",    # typical Expo dev server port
+        "http://localhost:19006",   # Expo Web preview port
+        "http://127.0.0.1:8081",
+        "http://127.0.0.1:19006",
+        "http://192.168.0.81:19000",  # Expo Go DevTools
+        "http://192.168.0.81:19006",  # Web bundler
+        "http://192.168.0.81:8000",  # Own API access from device
+    ]
+else:
+    # In production you can keep it empty or explicitly define production origins
+    CORS_ALLOWED_ORIGINS = [
+        # "https://your-production-frontend.com",
+    ]
 
 ROOT_URLCONF = 'cam_calendar.urls'
 
