@@ -3,13 +3,13 @@ from django.db import models
 # Create your models here.
 
 class GoogleCalendarEntry(models.Model):
-    google_event_id = models.CharField(max_length=255, unique=True)
-    recurring_event_id = models.CharField(max_length=255, null=True, blank=True)
+    googleEventId = models.CharField(max_length=255, unique=True)
+    recurringEventId = models.CharField(max_length=255, null=True, blank=True)
     summary = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
-    last_updated = models.DateTimeField()
+    startTime = models.DateTimeField()
+    endTime = models.DateTimeField()
+    lastUpdated = models.DateTimeField()
     location = models.CharField(max_length=255)
 
     # name = models.CharField(max_length=200)
