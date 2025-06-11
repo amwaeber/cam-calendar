@@ -1,7 +1,12 @@
 from rest_framework import serializers
 from .models import GoogleCalendarEntry
 
-class GoogleCalendarEntrySerializer(serializers.ModelSerializer):
+class EventSummarySerializer(serializers.ModelSerializer):
     class Meta:
         model = GoogleCalendarEntry
-        fields = '__all__'
+        fields = ['id', 'summary', 'startTime', 'endTime', 'location']  # no description
+
+class EventDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GoogleCalendarEntry
+        fields = ['id', 'summary', 'startTime', 'endTime', 'location', 'description']
