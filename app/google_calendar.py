@@ -38,14 +38,14 @@ def sync_google_calendar():
 
         # https://developers.google.com/workspace/calendar/api/v3/reference/events#resource
         GoogleCalendarEntry.objects.update_or_create(
-            google_event_id=event['id'],
+            googleEventId=event['id'],
             defaults={
-                'recurring_event_id': event.get('recurringEventId'),
+                'recurringEventId': event.get('recurringEventId'),
                 'summary': event.get('summary', ''),
                 'description': event.get('description', ''),
-                'start_time': start,
-                'end_time': end,
-                'last_updated': event['updated'],
+                'startTime': start,
+                'endTime': end,
+                'lastUpdated': event['updated'],
                 'location': event.get('location', ''),
             }
         )
