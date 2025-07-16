@@ -1,30 +1,40 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 
-# Create your models here.
-
+# Events imported from the Cambridge Community Events Google calendar
 class GoogleCalendarEntry(models.Model):
     googleEventId = models.CharField(max_length=255, unique=True)
-    recurringEventId = models.CharField(max_length=255, null=True, blank=True)
+    recurringEventId = models.CharField(max_length=255, blank=True)
     summary = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True)
     startTime = models.DateTimeField()
-    endTime = models.DateTimeField()
+    endTime = models.DateTimeField(null=True, blank=True)
     lastUpdated = models.DateTimeField()
-    location = models.CharField(max_length=255)
+    location = models.CharField(max_length=255, blank=True)
 
-    # name = models.CharField(max_length=200)
-    # begin = models.DateTimeField()
-    # end = models.DateTimeField()
-    # description = models.TextField()
-    # location = models.CharField(max_length=200)
+    def __str__(self):
+        return f"{self.summary}"
 
+    def clean(self):
+        if self.endTime and self.startTime and self.endTime <= self.startTime:
+            raise ValidationError("endTime must be after startTime.")
+
+# Standardised event model - intention is to switch to this model at a later point
 class Event(models.Model):
-    name = models.CharField(max_length=200)
-    date = models.DateField()
-    time = models.TimeField()
-    description = models.TextField()
-    bookingDetails = models.TextField()
-    eventPage = models.TextField()
-    location = models.CharField(max_length=200)
-    rejected = models.BooleanField(default=False)
-    googleCalendarEntry = models.ForeignKey(GoogleCalendarEntry, on_delete=models.DO_NOTHING)
+    title = models.CharField(max_length=255)
+    startDate = models.DateField()
+    endDate = models.DateField(null=True, blank=True)
+    startTime = models.TimeField()
+    endTime = models.TimeField(null=True, blank=True)
+    location = models.CharField(max_length=255)
+    cost = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+    minAge = models.IntegerField(blank=True, null=True)
+    maxAge = models.IntegerField(blank=True, null=True)
+    bookingLink = models.TextField(blank=True)
+    eventLink = models.TextField(blank=True)
+    description = models.TextField(blank=True)
+    approved = models.BooleanField(default=False)
+    googleCalendarEntry = models.ForeignKey(GoogleCalendarEntry, on_delete=models.SET_NULL, blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.title}"

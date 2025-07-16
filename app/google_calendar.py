@@ -1,48 +1,14 @@
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
-from .models import GoogleCalendarEntry
+from django.core.exceptions import ValidationError
+from app.models import GoogleCalendarEntry
+from app.utils import safe_linkify
 import datetime
-import re
 
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 SERVICE_ACCOUNT_FILE = 'service_keys/calendar-service-account.json'
 CALENDAR_ID = 'cambridgecommunityevents@gmail.com'
 
-
-def safe_linkify(text: str) -> str:
-
-    # 1. Extract and protect <a>...</a> blocks
-    a_tag_pattern = re.compile(r'<a\s+[^>]*?>.*?</a>', re.DOTALL | re.IGNORECASE)
-    protected = []
-
-    def protect(match):
-        protected.append(match.group(0))
-        return f"[[PROTECTED_LINK_{len(protected) - 1}]]"
-
-    text = a_tag_pattern.sub(protect, text)
-
-    # 2. Replace https:// and www. (but not http://)
-    def url_repl(match):
-        url = match.group(0)
-        href = url if url.startswith("https://") else f"https://{url}"
-        return f'<a href="{href}">{url}</a>'
-
-    url_pattern = re.compile(r'\b(?:https://[^\s<>"\']+|www\.[^\s<>"\']+)', re.IGNORECASE)
-    text = url_pattern.sub(url_repl, text)
-
-    # 3. Replace email addresses not already inside links
-    def email_repl(match):
-        email = match.group(0)
-        return f'<a href="mailto:{email}">{email}</a>'
-
-    email_pattern = re.compile(r'\b[\w\.-]+@[\w\.-]+\.\w+\b')
-    text = email_pattern.sub(email_repl, text)
-
-    # 4. Restore protected <a> tags
-    for i, original in enumerate(protected):
-        text = text.replace(f"[[PROTECTED_LINK_{i}]]", original)
-
-    return text
 
 def sync_google_calendar():
     creds = service_account.Credentials.from_service_account_file(
@@ -74,10 +40,10 @@ def sync_google_calendar():
             continue  # Skip all-day events for now
 
         # https://developers.google.com/workspace/calendar/api/v3/reference/events#resource
-        GoogleCalendarEntry.objects.update_or_create(
+        obj, _ = GoogleCalendarEntry.objects.update_or_create(
             googleEventId=event['id'],
             defaults={
-                'recurringEventId': event.get('recurringEventId'),
+                'recurringEventId': event.get('recurringEventId', ''),
                 'summary': event.get('summary', ''),
                 'description': safe_linkify(event.get('description', '')),
                 'startTime': start,
@@ -86,4 +52,11 @@ def sync_google_calendar():
                 'location': event.get('location', ''),
             }
         )
+
+        try:
+            obj.full_clean()  # Model-level validation
+            obj.save()
+        except ValidationError as e:
+            print(f"Skipping event {event['id']} due to validation error: {e}")
+            obj.delete()  # Clean up if the object was saved but is invalid
 
