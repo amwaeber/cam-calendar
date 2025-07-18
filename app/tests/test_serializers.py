@@ -21,16 +21,28 @@ class EventSerializerTests(TestCase):
         serializer = EventDetailSerializer(self.event)
         self.assertIn('description', serializer.data)
 
-    def test_missing_start_time_fails(self):
+    def test_missing_required_fields(self):
         data = {
-            'summary': 'No Time',
-            'endTime': '2025-08-10T15:00:00Z',
-            'location': 'Some other location',
+            'summary': '',
+            'startTime': '',
         }
-
-        serializer = EventDetailSerializer(data=data)
+        serializer = EventSummarySerializer(data=data)
         self.assertFalse(serializer.is_valid())
+        self.assertIn('summary', serializer.errors)
         self.assertIn('startTime', serializer.errors)
+
+    def test_optional_fields_accept_blank_or_null(self):
+        data = {
+            'googleEventId': '1',
+            'summary': 'Test Event',
+            'startTime': '2025-07-08T10:00:00Z',
+            'lastUpdated': '2025-07-08T09:00:00Z',
+            'endTime': None,
+            'description': '',
+            'location': '',
+        }
+        serializer = EventDetailSerializer(data=data)
+        self.assertTrue(serializer.is_valid())
 
     def test_invalid_datetime_format(self):
         data = {

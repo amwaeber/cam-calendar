@@ -2,3 +2,4 @@
 /venv/
 /.condaenv/
 /service_keys/calendar-service-account.json
+/.env
